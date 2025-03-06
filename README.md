@@ -4,3 +4,12 @@ This game was made with [Unity](https://unity.com) using [Visual Studio Code](ht
 ## Unity Setup
 
 ## Visual Studio Code Setup
+
+## Code
+
+### Jump 
+
+### Gravity
+
+### Background
+
