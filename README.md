@@ -8,8 +8,11 @@ This game was made with [Unity](https://unity.com) using [Visual Studio Code](ht
 ## Code
 
 ### Jump 
-
+```
+```
 ### Gravity
-
+```
+```
 ### Background
-
+```
+```
