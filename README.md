@@ -56,17 +56,13 @@ public class StickmanScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) == true)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)== true)
         {
             myRidgidbody.linearVelocity = Vector2.up * jumpStrength;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) == true)
-        {
-            myRidgidbody.linearVelocity = Vector2.up * jumpStrength;
-        }
+
     }
 }
-
 ```
 
 ### BoxMove
