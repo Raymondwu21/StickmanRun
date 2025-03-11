@@ -12,8 +12,9 @@ Create a New project and select Universal 2D for our 2D Stickman Running Game.
 
 
 ### Sprite Setup
-Sprites are the game's objects and characters which will be an image to give to GameObject. We will be creating our stickman and box sprites for the game, so create your own sprites or download sprites from the internet. Once you have imported your sprites, create two GameObjects and add a component called Sprite Renderer which you will drag your sprites to.
-![image](https://github.com/user-attachments/assets/7623cad3-8cb1-4e1f-94e5-af3414592abd)
+Sprites are the game's objects and characters which will be an image to give to GameObject. We will be creating a stickman, floor, and box sprite for the game, so create your own sprites or download sprites from the internet. Once you have imported your sprites, create a GameObject for each and add a component called Sprite Renderer which you will drag your sprites to.
+![image](https://github.com/user-attachments/assets/7623cad3-8cb1-4e1f-94e5-af3414592abd) ![image](https://github.com/user-attachments/assets/048843a5-54af-4140-99ad-c2645ceea18f)
+
 
 For both of these GameObjects, Stickman and Box, you will be adding more components, Rigidbody 2d, Collider, and a Script. 
 ![image](https://github.com/user-attachments/assets/43b2bb07-5005-4a05-8c76-88a13211d7c9)
