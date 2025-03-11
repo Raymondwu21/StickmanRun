@@ -16,7 +16,7 @@ Sprites are the game's objects and characters which will be an image to give to 
 ![image](https://github.com/user-attachments/assets/7623cad3-8cb1-4e1f-94e5-af3414592abd) ![image](https://github.com/user-attachments/assets/048843a5-54af-4140-99ad-c2645ceea18f)
 
 
-For both of these GameObjects, Stickman and Box, you will be adding more components, Rigidbody 2d, Collider, and a Script. 
+For each of these GameObjects, you will be adding more components, Rigidbody 2d, Collider, and a Script. 
 ![image](https://github.com/user-attachments/assets/43b2bb07-5005-4a05-8c76-88a13211d7c9)
 
 
