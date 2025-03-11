@@ -21,7 +21,7 @@ For each of these GameObjects, you will be adding more components, Rigidbody 2d,
 
 
 ### Unity Code
-When you first create your script for your sprite, there will be two methods loaded in. ```Start()``` is called at the very beginning before the first frame. ```Update``` is called once per frame.
+When you first create your script for your sprite, there will be two methods loaded in. ```Start()``` is called at the very beginning before the first frame. ```Update()``` is called once per frame.
 ```
 using UnityEngine;
 
