@@ -6,6 +6,7 @@ This game was made with [Unity](https://unity.com) using [Visual Studio Code](ht
 ## Unity Setup
 Open up Unity Hub, and add Visual Studio Code to your modules.
 ![image](https://github.com/user-attachments/assets/a229047a-fe57-4441-9aea-0ae6f3f619a7)
+
 Create a New project and select Universal 2D for our 2D Stickman Running Game. 
 ![image](https://github.com/user-attachments/assets/e354a838-019a-49cf-baf8-d9f2e550e98f)
 
