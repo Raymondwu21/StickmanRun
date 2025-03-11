@@ -76,10 +76,62 @@ public class StickmanScript : MonoBehaviour
 
 ### BoxMove
 ```
+using UnityEngine;
+
+public class BoxMoveScript : MonoBehaviour
+{
+    public float moveSpeed = 5;
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
+    }
+}
 
 ```
 
 ### BoxSpawner
 ```
+using System.Threading;
+using UnityEngine;
+
+public class FloorBoxSpawner : MonoBehaviour
+{
+    public GameObject FloorBox;
+    public float spawnRate = 100;
+    private float timer = 0;
+    public float spawnHeight = 10;
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+
+        if(timer < spawnRate)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            spawnFloorBox();
+            timer = 0;
+        }
+
+    }
+
+    void spawnFloorBox()
+    {
+        float lowestPoint = transform.position.y - spawnHeight;
+        float highestPoint = transform.position.y + spawnHeight;
+        Instantiate(FloorBox, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
+    }
+}
 
 ```
