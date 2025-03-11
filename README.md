@@ -35,7 +35,7 @@ public class StickmanScript : MonoBehaviour
     }
 }
 ```
-## Visual Studio Code Setup
+## Visual Studio Code
 
 ### Coding the Game
 ```
