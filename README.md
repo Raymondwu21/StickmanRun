@@ -45,7 +45,32 @@ public class StickmanScript : MonoBehaviour
 ```
 
 ### StickManScript
+Stickman's only move is to jump up. We store the component Rigidbody2D into myRigidbody with ```public Rigidbody2D myRidgidBody;``` and create a variable for the jump height with ```public float jumpStrength```. The component Rigidbody2D controls the physics behind the GameObject, in this case it will be the jump height and gravity of Stickman. ```public``` allows the variable to be accessed from other scripts and also allows you to edit the value in Unity without modifying the script. We don't need anything in ```Start()``` because jumping is a player controlled action so it belongs in the ```Update()```. In ```Update()``` we create an ```if``` statement to detect when a player presses the keys "space" and "up arrow" to indicate a jump. To create the jump movement we call myRigidbody and give it linear Velocity in the up direction multiplied by jumpStrength to control the height of the jump.
 ```
+using UnityEngine;
+
+public class StickmanScript : MonoBehaviour
+{
+    public Rigidbody2D myRidgidbody;
+    public float jumpStrength;
+    void Start()
+    {
+
+    }
+
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            myRidgidbody.linearVelocity = Vector2.up * jumpStrength;
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true)
+        {
+            myRidgidbody.linearVelocity = Vector2.up * jumpStrength;
+        }
+    }
+}
 
 ```
 
