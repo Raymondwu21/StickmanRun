@@ -70,9 +70,13 @@ public class StickmanScript : MonoBehaviour
 }
 ```
 ## Visual Studio Code
-
+There are 5 classes needed for this game to function properly, stickman's functionality, box movements, box spawning, box deletion, and a logic script.
 ### StickManScript.cs
-Stickman's only move is to jump up. We store the component Rigidbody2D into myRigidbody with ```public Rigidbody2D myRidgidBody;``` and create a variable for the jump height with ```public float jumpStrength```. The component Rigidbody2D controls the physics behind the GameObject, in this case it will be the jump height and gravity of Stickman. ```public``` allows the variable to be accessed from other scripts and also allows you to edit the value in Unity without modifying the script. We don't need anything in ```Start()``` because jumping is a player controlled action so it belongs in the ```Update()```. In ```Update()``` we create an ```if``` statement to detect when a player presses the keys "space" and "up arrow" to indicate a jump. To create the jump movement we call myRigidbody and give it linear Velocity in the up direction multiplied by jumpStrength to control the height of the jump.
+The **StickmanScript.cs** controls the **player's movement**, specifically jumping and falling, while also handling **collisions** with the ground and obstacles. The script ensures that:
+- The **Stickman can jump** when touching the ground.
+- The **Stickman falls faster** when pressing the **Down Arrow**.
+- The **game ends** when the Stickman **collides with the left side of an obstacle**.
+#### Declare the Variables
 ```
 using UnityEngine;
 
@@ -83,7 +87,13 @@ public class StickmanScript : MonoBehaviour
     public float downStrength;
     private bool isGrounded;
     private LogicScript logic;
-
+```
+- ```Rigidbody2D myRidgidbody;``` → Stores the Rigidbody2D component, allowing Unity's physics engine to handle movement.
+- ```float jumpStrength;``` → Controls how high the Stickman jumps.
+- ```float downStrength;``` → Controls how fast the Stickman falls when the Down Arrow is pressed.
+- ```bool isGrounded;``` → Keeps track of whether the Stickman is on the ground (prevents double jumps).
+- ```LogicScript logic;``` → Reference to the LogicScript for triggering the Game Over screen.
+```
     void Start()
     {
         isGrounded = false;
@@ -99,7 +109,9 @@ public class StickmanScript : MonoBehaviour
             Debug.LogError("❌ ERROR: Logic Manager not found! Make sure it has the tag 'Logic'.");
         }
     }
+```
 
+```
     void Update()
     {
         if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
@@ -113,7 +125,9 @@ public class StickmanScript : MonoBehaviour
             myRidgidbody.linearVelocity = Vector2.down * downStrength;
         }
     }
+```
 
+```
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Box"))
@@ -142,7 +156,9 @@ public class StickmanScript : MonoBehaviour
             }
         }
     }
+```
 
+```
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -151,7 +167,6 @@ public class StickmanScript : MonoBehaviour
         }
     }
 }
-
 ```
 
 ### FloatBoxMoveScript.cs
