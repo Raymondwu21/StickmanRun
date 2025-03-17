@@ -175,7 +175,7 @@ public class StickmanScript : MonoBehaviour
   - This means the Stickman hit the left side of the Box.
   - If ```true```, it triggers Game Over (```logic.gameOver();```) and pauses the game (```Time.timeScale = 0f;```).
 
-#### Step 5 Handling Exit Collisions (```OnCollisionExit2D()``` Method)
+#### Step 5) Handling Exit Collisions (```OnCollisionExit2D()``` Method)
 ```
     void OnCollisionExit2D(Collision2D collision)
     {
@@ -185,6 +185,7 @@ public class StickmanScript : MonoBehaviour
         }
     }
 }
+```
 - If the Stickman leaves the ground (```"Ground"```), isGrounded is set to ```false```.
 - This prevents the player from double jumping.
 
