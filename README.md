@@ -76,7 +76,7 @@ The **StickmanScript.cs** controls the **player's movement**, specifically jumpi
 - The **Stickman can jump** when touching the ground.
 - The **Stickman falls faster** when pressing the **Down Arrow**.
 - The **game ends** when the Stickman **collides with the left side of an obstacle**.
-#### Declare the Variables
+#### Step 1) Declare the Variables
 ```
 using UnityEngine;
 
@@ -93,6 +93,7 @@ public class StickmanScript : MonoBehaviour
 - ```float downStrength;``` → Controls how fast the Stickman falls when the Down Arrow is pressed.
 - ```bool isGrounded;``` → Keeps track of whether the Stickman is on the ground (prevents double jumps).
 - ```LogicScript logic;``` → Reference to the LogicScript for triggering the Game Over screen.
+#### Step 2) Initialize Variables (```Start()```Method)
 ```
     void Start()
     {
@@ -110,7 +111,12 @@ public class StickmanScript : MonoBehaviour
         }
     }
 ```
+- The ```sGrounded``` variable is initialized as false, meaning the Stickman starts in the air.
+- ```GameObject.FindGameObjectWithTag("Logic")``` searches for a GameObject tagged as "Logic" in the scene.
+- If found, it gets the ```LogicScript``` component so we can later call ```logic.gameOver()``` to end the game.
+- If not found, an error message is displayed in the Unity Console.
 
+#### Step 3) Handling Player Input (```Update()``` Method)
 ```
     void Update()
     {
@@ -126,7 +132,12 @@ public class StickmanScript : MonoBehaviour
         }
     }
 ```
+- The Stickman can only jump when ```isGrounded == true```.
+- Pressing ```Space``` or ```Up Arrow``` applies an upward force (```Vector2.up * jumpStrength```), making the Stickman jump.
+- After jumping, ```isGrounded``` is set to ```false``` to prevent multiple jumps in mid-air.
+- Pressing ```Down Arrow``` applies a downward force (```Vector2.down * downStrength```), making the Stickman fall faster.
 
+#### Step 4) Collision Handling (```OnCollisionEnter2D()``` Method)
 ```
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -157,7 +168,14 @@ public class StickmanScript : MonoBehaviour
         }
     }
 ```
+- If the Stickman lands on the ground (```"Ground"```) or a Box (```"Box"```), it is considered grounded (```isGrounded = true```).
+- If the Stickman collides with a Box, it checks where the collision occurred.
+- ```collision.GetContacts(contactPoints);``` retrieves all contact points of the collision.
+- ```contact.normal.x < -0.5f```
+  - This means the Stickman hit the left side of the Box.
+  - If ```true```, it triggers Game Over (```logic.gameOver();```) and pauses the game (```Time.timeScale = 0f;```).
 
+#### Step 5 Handling Exit Collisions (```OnCollisionExit2D()``` Method)
 ```
     void OnCollisionExit2D(Collision2D collision)
     {
@@ -167,7 +185,8 @@ public class StickmanScript : MonoBehaviour
         }
     }
 }
-```
+- If the Stickman leaves the ground (```"Ground"```), isGrounded is set to ```false```.
+- This prevents the player from double jumping.
 
 ### FloatBoxMoveScript.cs
 ```
