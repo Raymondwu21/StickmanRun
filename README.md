@@ -207,9 +207,12 @@ public class FloatBoxMoveScript : MonoBehaviour
     public float maxSpeed = 10f;
     private LogicScript logicScript;
 ```
+- ```float moveSpeed;``` → Controls the speed at which the box moves to the left.
+- ```float speedIncrease;``` → Determines how much the speed increases over time.
+- ```float maxSpeed;``` → Sets a cap on the movement speed to prevent it from becoming too fast.
+- ```LogicScript logicScript;``` → Reference to ```LogicScript```, used to increase the player's score when an obstacle is successfully avoided.
 
-
-#### Step 2)
+#### Step 2) Initializing the Script (```Start()``` Method)
 ```
     void Start()
     {
@@ -222,9 +225,13 @@ public class FloatBoxMoveScript : MonoBehaviour
         }
     }
 ```
+- ```Debug.Log("✅ FloatBoxMoveScript has started!")```; → Displays a message in the Unity Console to confirm that the script has started.
+- ```logicScript = GameObject.FindFirstObjectByType<LogicScript>();```
+  - Finds the Logic Manager in the scene and assigns it to ```logicScript```.
+  - This allows the script to update the player's score when a box is destroyed.
+- If ```LogicScript``` is not found, an error message is logged.
 
-
-#### Step 3)
+#### Step 3) Moving the Obstacle (```Update()``` Method)
 ```
     void Update()
     {
@@ -243,6 +250,18 @@ public class FloatBoxMoveScript : MonoBehaviour
     }
 }
 ```
+- Gradually Increases Speed
+  - ```moveSpeed``` gradually increases over time, making the game progressively harder.
+  - ```Mathf.Min(moveSpeed + speedIncrease * Time.deltaTime, maxSpeed);``` prevents the speed from exceeding maxSpeed = 10f
+- Moves the box leftward at the current speed. ```transform.position += Vector3.left * moveSpeed * Time.deltaTime;```
+  - ```Time.deltaTime``` ensures smooth movement across different frame rates.
+- Detects When the Box Goes Off-Screen
+  - If the box moves past ```x = -10f```, it's off the screen and should be destroyed.
+  - Before destroying:
+    - It logs a message in the console: "✅ Box moved off-screen!"
+    - If ```logicScript exists```, it increases the player's score.
+    - The box is destroyed to free memory.
+
 
 ### BoxSpawner.cs
 
