@@ -15,10 +15,10 @@ This project is a **2D Stickman Running Game** built using [Unity](https://unity
 - A computer with Windows/Mac
 
 ## Unity Setup
-1. Open **Unity Hub**, go to **Installs**, select your Unity version, and **add Visual Studio Code as a module**.  
+**1.** Open **Unity Hub**, go to **Installs**, select your Unity version, and **add Visual Studio Code as a module**.  
 ![image](https://github.com/user-attachments/assets/a229047a-fe57-4441-9aea-0ae6f3f619a7)
 
-2. Create a New Project
+**2.** Create a New Project
 - Open Unity Hub → Click **"New Project"**
 - Select Universal 2D for your 2D Stickman Running Game. 
 ![image](https://github.com/user-attachments/assets/e354a838-019a-49cf-baf8-d9f2e550e98f)
@@ -29,19 +29,19 @@ Sprites are the **visual representations of game objects**. For this game, we ne
 - **Stickman character**
 - **Ground (floor)**
 - **Box (obstacle)**
-1. Import Sprites
+**1.** Import Sprites
  - **Download or create your own** sprites.
  - **Import them into Unity**:  
    - Go to **Assets → Import New Asset**  
    - Select the sprite images.
-2. Create GameObjects
+**2.** Create GameObjects
    - Create **three GameObjects**:
      - **Stickman**
      - **Ground**
      - **Box (obstacle)**
    - Attach a **Sprite Renderer** component to each.
      - Drag the correct sprite into the **Sprite Renderer**.
-3. Add Physics Components
+**3.** Add Physics Components
 For each GameObject:
    - Add **Rigidbody2D** (for physics-based movement)
    - Add **BoxCollider2D** (for collision detection)
