@@ -1,13 +1,25 @@
 # How to Create a Stickman Running Game with Unity
 
+## Introduction
+This project is a **2D Stickman Running Game** built using [Unity](https://unity.com) and [Visual Studio Code](https://code.visualstudio.com/) to program it. Players control a stickman as they jump over obstacles and survive as long as possible. This project is designed for beginners to learn the basics of Unity game development.
+
 ## Overview
-This game was made with [Unity](https://unity.com) using [Visual Studio Code](https://code.visualstudio.com/) to program it. Unity is scripted in [C#](https://unity.com/how-to/programming-unity).
+- Developed with **Unity and C#**
+- Features **infinite runner mechanics**
+- Implements **jumping, obstacles, and a scoring system**
+- Includes a **game over system** when hitting obstacles
+
+## Prerequisites
+- Unity (latest version)
+- Basic knowledge of C#
+- A computer with Windows/Mac
 
 ## Unity Setup
-Open up Unity Hub, and add Visual Studio Code to your modules.
+1. Open Unity Hub and install Visual Studio Code as a module.
 ![image](https://github.com/user-attachments/assets/a229047a-fe57-4441-9aea-0ae6f3f619a7)
 
-Create a New project and select Universal 2D for our 2D Stickman Running Game. 
+2. Create a New Project
+- Select Universal 2D for your 2D Stickman Running Game. 
 ![image](https://github.com/user-attachments/assets/e354a838-019a-49cf-baf8-d9f2e550e98f)
 
 
