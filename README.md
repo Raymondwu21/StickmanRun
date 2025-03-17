@@ -16,6 +16,7 @@ This project is a **2D Stickman Running Game** built using [Unity](https://unity
 
 ## Unity Setup
 **1.** Open **Unity Hub**, go to **Installs**, select your Unity version, and **add Visual Studio Code as a module**.  
+
 ![image](https://github.com/user-attachments/assets/a229047a-fe57-4441-9aea-0ae6f3f619a7)
 
 **2.** Create a New Project
