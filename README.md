@@ -21,7 +21,8 @@ This project is a **2D Stickman Running Game** built using [Unity](https://unity
 
 **2.** Create a New Project
 - Open Unity Hub → Click **"New Project"**
-- Select Universal 2D for your 2D Stickman Running Game. 
+- Select Universal 2D for your 2D Stickman Running Game.
+- 
 ![image](https://github.com/user-attachments/assets/e354a838-019a-49cf-baf8-d9f2e550e98f)
 
 
@@ -46,8 +47,8 @@ Sprites are the **visual representations of game objects**. For this game, we ne
 For each GameObject:
    - Add **Rigidbody2D** (for physics-based movement)
    - Add **BoxCollider2D** (for collision detection)
-![image](https://github.com/user-attachments/assets/7623cad3-8cb1-4e1f-94e5-af3414592abd) ![image](https://github.com/user-attachments/assets/048843a5-54af-4140-99ad-c2645ceea18f)
 
+![image](https://github.com/user-attachments/assets/7623cad3-8cb1-4e1f-94e5-af3414592abd) ![image](https://github.com/user-attachments/assets/048843a5-54af-4140-99ad-c2645ceea18f)
 
 ![image](https://github.com/user-attachments/assets/43b2bb07-5005-4a05-8c76-88a13211d7c9)
 
@@ -444,7 +445,9 @@ public class LogicScript : MonoBehaviour
 
 ## Summary
 Once you have completed all the steps, your are finished and have a functional stickman running game!
+
 ![image](https://github.com/user-attachments/assets/b68d93b6-7942-4906-9410-23f91b123eb2)
+
 ![image](https://github.com/user-attachments/assets/37652b51-b528-4fac-a555-6172e373d8ec)
 
 ## Features to Add Next
