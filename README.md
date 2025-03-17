@@ -246,6 +246,7 @@ public class FloatBoxMoveScript : MonoBehaviour
 
 ### BoxSpawner.cs
 
+#### Step 1)
 ```
 using UnityEngine;
 
@@ -269,7 +270,7 @@ public class BoxSpawner : MonoBehaviour
 ```
 
 
-#### Step 1)
+#### Step 2)
 ```
     void Update()
     {
@@ -286,7 +287,7 @@ public class BoxSpawner : MonoBehaviour
 ```
 
 
-#### Step 2)
+#### Step 3)
 ```
     void SpawnBox()
     {
@@ -314,6 +315,7 @@ public class BoxSpawner : MonoBehaviour
 
 ### BoxDestroyer.cs
 
+#### Step 1)
 ```
 using UnityEngine;
 
@@ -323,7 +325,7 @@ public class BoxDestroyer : MonoBehaviour
 ```
 
 
-#### Step 1)
+#### Step 2)
 ```
     void Start()
     {
@@ -337,7 +339,7 @@ public class BoxDestroyer : MonoBehaviour
 ```
 
 
-#### Step 2)
+#### Step 3)
 ```
     void OnTriggerEnter2D(Collider2D other)
     {
