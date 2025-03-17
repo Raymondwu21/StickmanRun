@@ -15,24 +15,43 @@ This project is a **2D Stickman Running Game** built using [Unity](https://unity
 - A computer with Windows/Mac
 
 ## Unity Setup
-1. Open Unity Hub and install Visual Studio Code as a module.
+1. Open **Unity Hub**, go to **Installs**, select your Unity version, and **add Visual Studio Code as a module**.  
 ![image](https://github.com/user-attachments/assets/a229047a-fe57-4441-9aea-0ae6f3f619a7)
 
 2. Create a New Project
+- Open Unity Hub → Click **"New Project"**
 - Select Universal 2D for your 2D Stickman Running Game. 
 ![image](https://github.com/user-attachments/assets/e354a838-019a-49cf-baf8-d9f2e550e98f)
 
 
 ### Sprite Setup
-Sprites are the game's objects and characters which will be an image to give to GameObject. We will be creating a stickman, floor, and box sprite for the game, so create your own sprites or download sprites from the internet. Once you have imported your sprites, create a GameObject for each and add a component called Sprite Renderer which you will drag your sprites to.
+Sprites are the **visual representations of game objects**. For this game, we need:
+- **Stickman character**
+- **Ground (floor)**
+- **Box (obstacle)**
+1. Import Sprites
+ - **Download or create your own** sprites.
+ - **Import them into Unity**:  
+   - Go to **Assets → Import New Asset**  
+   - Select the sprite images.
+2. Create GameObjects
+   - Create **three GameObjects**:
+     - **Stickman**
+     - **Ground**
+     - **Box (obstacle)**
+   - Attach a **Sprite Renderer** component to each.
+     - Drag the correct sprite into the **Sprite Renderer**.
+3. Add Physics Components
+For each GameObject:
+   - Add **Rigidbody2D** (for physics-based movement)
+   - Add **BoxCollider2D** (for collision detection)
 ![image](https://github.com/user-attachments/assets/7623cad3-8cb1-4e1f-94e5-af3414592abd) ![image](https://github.com/user-attachments/assets/048843a5-54af-4140-99ad-c2645ceea18f)
 
 
-For each of these GameObjects, you will be adding more components, Rigidbody 2d, Collider, and a Script. 
 ![image](https://github.com/user-attachments/assets/43b2bb07-5005-4a05-8c76-88a13211d7c9)
 
 
-### Unity Code
+### Unity Scripting (C#)
 When you first create your script for your sprite, there will be two methods loaded in. ```Start()``` is called at the very beginning before the first frame. ```Update()``` is called once per frame.
 ```
 using UnityEngine;
@@ -312,3 +331,9 @@ public class LogicScript : MonoBehaviour
     }
 }
 ```
+
+### Features to Add Next
+- Sound effects (jumping, colliding, etc.)
+- Background Music
+- UI Improvements
+- High Score System
