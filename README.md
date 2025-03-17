@@ -190,6 +190,13 @@ public class StickmanScript : MonoBehaviour
 - This prevents the player from double jumping.
 
 ### FloatBoxMoveScript.cs
+The **FloatBoxMoveScript.cs** controls the **movement of floating obstacles** in the Stickman Running Game. This script:
+- **Moves obstacles from right to left** across the screen.
+- **Gradually increases movement speed** over time, making the game more challenging.
+- **Destroys the obstacle** when it moves off-screen.
+- **Increases the player's score** when an obstacle is successfully avoided.
+
+#### Step 1) Declaring Variables
 ```
 using UnityEngine;
 
@@ -199,7 +206,11 @@ public class FloatBoxMoveScript : MonoBehaviour
     public float speedIncrease = 0.2f;
     public float maxSpeed = 10f;
     private LogicScript logicScript;
+```
 
+
+#### Step 2)
+```
     void Start()
     {
         Debug.Log("✅ FloatBoxMoveScript has started!");
@@ -210,7 +221,11 @@ public class FloatBoxMoveScript : MonoBehaviour
             Debug.LogError("❌ ERROR: LogicScript NOT found! Make sure 'Logic Manager' is in the scene.");
         }
     }
+```
 
+
+#### Step 3)
+```
     void Update()
     {
         moveSpeed = Mathf.Min(moveSpeed + speedIncrease * Time.deltaTime, maxSpeed);
@@ -227,10 +242,10 @@ public class FloatBoxMoveScript : MonoBehaviour
         }
     }
 }
-
 ```
 
 ### BoxSpawner.cs
+
 ```
 using UnityEngine;
 
@@ -251,7 +266,11 @@ public class BoxSpawner : MonoBehaviour
     public float floatBoxX = 0f;
     public float minSpawnHeight = 2f;
     public float maxSpawnHeight = 5f;
+```
 
+
+#### Step 1)
+```
     void Update()
     {
         if (timer < spawnRate)
@@ -264,7 +283,11 @@ public class BoxSpawner : MonoBehaviour
             timer = 0f;
         }
     }
+```
 
+
+#### Step 2)
+```
     void SpawnBox()
     {
         GameObject boxToSpawn;
@@ -288,14 +311,20 @@ public class BoxSpawner : MonoBehaviour
 }
 ```
 
+
 ### BoxDestroyer.cs
+
 ```
 using UnityEngine;
 
 public class BoxDestroyer : MonoBehaviour
 {
     private LogicScript logicScript;
+```
 
+
+#### Step 1)
+```
     void Start()
     {
         logicScript = GameObject.FindFirstObjectByType<LogicScript>();
@@ -305,7 +334,11 @@ public class BoxDestroyer : MonoBehaviour
             Debug.LogError("❌ ERROR: LogicScript NOT found! Make sure 'Logic Manager' is in the scene.");
         }
     }
+```
 
+
+#### Step 2)
+```
     void OnTriggerEnter2D(Collider2D other)
     {
         if (logicScript != null)
@@ -318,7 +351,10 @@ public class BoxDestroyer : MonoBehaviour
 }
 ```
 
+
 ### LogicScript.cs
+
+#### Step 1)
 ```
 using UnityEngine;
 using UnityEngine.UI;
@@ -329,12 +365,20 @@ public class LogicScript : MonoBehaviour
     public int playerScore;
     public Text scoreText;
     public GameObject gameOverScreen;
+```
 
+
+#### Step 2)
+```
     void Start()
     {
         Debug.Log("✅ LogicScript has started!");
     }
+```
 
+
+#### Step 3)
+```
     [ContextMenu("Increase Score")]
     public void addScore()
     {
@@ -342,14 +386,22 @@ public class LogicScript : MonoBehaviour
         scoreText.text = playerScore.ToString();
         Debug.Log("✅ Score Increased: " + playerScore);
     }
+```
 
+
+#### Step 4)
+```
     public void restartGame()
     {
         Debug.Log("🔄 Restarting Game...");
         Time.timeScale = 1f; // ✅ Ensure game resumes before restarting
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+```
 
+
+#### Step 5)
+```
     public void gameOver()
     {
         Debug.Log("💀 Game Over Screen Activated!");
