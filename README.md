@@ -421,6 +421,12 @@ public class LogicScript : MonoBehaviour
 }
 ```
 
+
+### Summary
+Once you have completed all the steps, your are finished and have a functional stickman running game!
+![image](https://github.com/user-attachments/assets/b68d93b6-7942-4906-9410-23f91b123eb2)
+![image](https://github.com/user-attachments/assets/37652b51-b528-4fac-a555-6172e373d8ec)
+
 ### Features to Add Next
 - Sound effects (jumping, colliding, etc.)
 - Background Music
