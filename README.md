@@ -22,7 +22,7 @@ This project is a **2D Stickman Running Game** built using [Unity](https://unity
 **2.** Create a New Project
 - Open Unity Hub → Click **"New Project"**
 - Select Universal 2D for your 2D Stickman Running Game.
-- 
+
 ![image](https://github.com/user-attachments/assets/e354a838-019a-49cf-baf8-d9f2e550e98f)
 
 
