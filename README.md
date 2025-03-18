@@ -58,7 +58,7 @@ For each GameObject:
 
 
 ### Unity Layout
-Here, you will find everything you need to use in order to create the stickman running game. The **Hierarchy** is where your game objects will be created and used, and the inspector is where you will attach components to it.
+Here, you will find everything you need to use in order to create the stickman running game. The **Hierarchy** is where your game objects will be created and used, and the **Inspector** is where you will attach components to it.
 
 ![image](https://github.com/user-attachments/assets/250b60dd-43c1-4925-8b9f-c6908df0cd8c)
 
