@@ -63,7 +63,6 @@ Here, you will find everything you need to use in order to create the stickman r
 
 ![image](https://github.com/user-attachments/assets/250b60dd-43c1-4925-8b9f-c6908df0cd8c)
 
-![image](https://github.com/user-attachments/assets/fa8f847e-65e9-4d76-a498-7bf4be219e2e)
 
 
 ### Unity Scripting (C#)
