@@ -13,7 +13,7 @@ This project is a **2D Stickman Running Game** built using [Unity](https://unity
 - [Unity Setup](#unity-setup)
 - [Sprite Setup](#sprite-setup)
 - [Unity Layout](#unity-layout)
-- [Visual Studio Code](#visual-studio-code)
+- [Scripting the Game Using Visual Studio Code](#scripting-the-game-using-visual-studio-code)
   - [StickmanScript.cs](#stickmanscriptcs)
   - [FloatBoxMoveScript.cs](#floatboxmovescriptcs)
   - [BoxSpawner.cs](#boxspawnercs)
