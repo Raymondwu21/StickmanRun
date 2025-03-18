@@ -37,6 +37,7 @@ Sprites are the **visual representations of game objects**. For this game, we ne
  - **Import them into Unity**:  
    - Go to **Assets → Import New Asset**  
    - Select the sprite images.
+
 **2.** Create GameObjects
    - Create **three GameObjects**:
      - **Stickman**
@@ -44,6 +45,7 @@ Sprites are the **visual representations of game objects**. For this game, we ne
      - **Box (obstacle)**
    - Attach a **Sprite Renderer** component to each.
      - Drag the correct sprite into the **Sprite Renderer**.
+  
 **3.** Add Physics Components
 For each GameObject:
    - Add **Rigidbody2D** (for physics-based movement)
