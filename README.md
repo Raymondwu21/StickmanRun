@@ -8,17 +8,17 @@ This project is a **2D Stickman Running Game** built using [Unity](https://unity
 - Includes a **game over system** when hitting obstacles
 
 ## 📚 Table of Contents
-- [🎮 Game Overview](#-overview)
-- [🛠️ Prerequisites](#️-prerequisites)
-- [🚀 Unity Project Setup](#-unity-project-setup)
-- [🎨 Sprite Setup](#-sprite-setup)
-- [📜 Scripts Explained](#-scripts-explained)
-  - [🕹️ StickmanScript.cs](#️-stickmanscriptcs)
-  - [📦 FloatBoxMoveScript.cs](#-floatboxmovescriptcs)
-  - [🔄 BoxSpawner.cs](#-boxspawnercs)
-  - [🗑️ BoxDestroyer.cs](#️-boxdestroyercs)
-  - [🧩 LogicScript.cs](#️-logicscriptcs)
-- [🧩 Game Over & Restart System](#-game-over--restart-system)
+- [Game Overview](#-Overview)
+- [Prerequisites](#-Prerequisites)
+- [Unity Project Setup](#-unity-project-setup)
+- [Sprite Setup](#-sprite-setup)
+- [Scripts Explained](#-scripts-explained)
+  - [StickmanScript.cs](#-stickmanscriptcs)
+  - [FloatBoxMoveScript.cs](#-floatboxmovescriptcs)
+  - [BoxSpawner.cs](#-boxspawnercs)
+  - [ BoxDestroyer.cs](#-boxdestroyercs)
+  - [ LogicScript.cs](#-logicscriptcs)
+- [Game Over & Restart System](#-game-over--restart-system)
 
 ## Overview
 Stickman Run is a simple yet addictive 2D endless runner game where you control a stickman who must jump over ground-level obstacles and dodge floating boxes.
