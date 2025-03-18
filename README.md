@@ -531,3 +531,10 @@ Once you have completed all the steps, your are finished and have a functional s
 - Background Music
 - UI Improvements
 - High Score System
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).  
+
+You are free to use, modify, and distribute this project for personal or commercial purposes.  
+Please credit the original author if you reuse parts of the project.
