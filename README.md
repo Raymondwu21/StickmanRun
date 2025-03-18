@@ -51,9 +51,12 @@ For each GameObject:
    - Add **Rigidbody2D** (for physics-based movement)
    - Add **BoxCollider2D** (for collision detection)
 
-![image](https://github.com/user-attachments/assets/7623cad3-8cb1-4e1f-94e5-af3414592abd) ![image](https://github.com/user-attachments/assets/048843a5-54af-4140-99ad-c2645ceea18f)
+![image](https://github.com/user-attachments/assets/7623cad3-8cb1-4e1f-94e5-af3414592abd) 
+
+![image](https://github.com/user-attachments/assets/048843a5-54af-4140-99ad-c2645ceea18f)
 
 ![image](https://github.com/user-attachments/assets/43b2bb07-5005-4a05-8c76-88a13211d7c9)
+
 
 ### Unity Layout
 Here, you will find everything you need to use in order to create the stickman running game. The **Hierarchy** is where your game objects will be created and used, and the inspector is where you will attach components to it.
