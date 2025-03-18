@@ -1,4 +1,4 @@
-# How to Create a Stickman Running Game with Unity
+![image](https://github.com/user-attachments/assets/64507b6c-06df-4690-802d-92d226e1389e)# How to Create a Stickman Running Game with Unity
 
 ## Introduction
 This project is a **2D Stickman Running Game** built using [Unity](https://unity.com) and [Visual Studio Code](https://code.visualstudio.com/) to program it. Players control a stickman as they jump over obstacles and survive as long as possible. This project is designed for beginners to learn the basics of Unity game development.
@@ -53,9 +53,16 @@ For each GameObject:
 
 ![image](https://github.com/user-attachments/assets/43b2bb07-5005-4a05-8c76-88a13211d7c9)
 
+### Unity Layout
+Here, you will find everything you need to use in order to create the stickman running game. The **Hierarchy** is where your game objects will be created and used, and the inspector is where you will attach components to it.
+
+![image](https://github.com/user-attachments/assets/250b60dd-43c1-4925-8b9f-c6908df0cd8c)
+
+![image](https://github.com/user-attachments/assets/fa8f847e-65e9-4d76-a498-7bf4be219e2e)
+
 
 ### Unity Scripting (C#)
-Scripts are instructions for your game objects to follow, they are attached as a component the same way as you attached **"Sprite Renderer"** and **"Ridgidbody2D"**.When you first create your script for your sprite, there will be two methods loaded in. ```Start()``` is called at the very beginning before the first frame. ```Update()``` is called once per frame.
+Scripts are instructions for your game objects to follow, they are attached as a component the same way as you attached **"Sprite Renderer"** and **"Ridgidbody2D"**. When you first create your script for your sprite, there will be two methods loaded in. ```Start()``` is called at the very beginning before the first frame. ```Update()``` is called once per frame.
 ```
 using UnityEngine;
 
@@ -72,13 +79,16 @@ public class StickmanScript : MonoBehaviour
     }
 }
 ```
+
 ## Visual Studio Code
 There are 5 classes needed for this game to function properly, stickman's functionality, box movements, box spawning, box deletion, and a logic script.
+
 ### StickManScript.cs
 The **StickmanScript.cs** controls the **player's movement**, specifically jumping and falling, while also handling **collisions** with the ground and obstacles. The script ensures that:
 - The **Stickman can jump** when touching the ground.
 - The **Stickman falls faster** when pressing the **Down Arrow**.
 - The **game ends** when the Stickman **collides with the left side of an obstacle**.
+
 #### Step 1) Declare the Variables
 ```
 using UnityEngine;
@@ -96,6 +106,7 @@ public class StickmanScript : MonoBehaviour
 - ```float downStrength;``` → Controls how fast the Stickman falls when the Down Arrow is pressed.
 - ```bool isGrounded;``` → Keeps track of whether the Stickman is on the ground (prevents double jumps).
 - ```LogicScript logic;``` → Reference to the LogicScript for triggering the Game Over screen.
+
 #### Step 2) Initialize Variables (```Start()```Method)
 ```
     void Start()
@@ -267,8 +278,12 @@ public class FloatBoxMoveScript : MonoBehaviour
 
 
 ### BoxSpawner.cs
+The **BoxSpawner.cs** script is responsible for:
+- Randomly spawning **floor boxes** and **floating boxes** at set intervals.
+- Allowing easy adjustment of spawn positions and heights through the Unity inspector.
+- Creating an endless stream of obstacles for the player to avoid.
 
-#### Step 1)
+#### Step 1) Declaring Variables
 ```
 using UnityEngine;
 
@@ -290,9 +305,14 @@ public class BoxSpawner : MonoBehaviour
     public float minSpawnHeight = 2f;
     public float maxSpawnHeight = 5f;
 ```
+- ```FloorBox``` and ```FloatBox```: Prefabs for obstacles to be spawned, assignable in the Unity inspector.
+- ```spawnRate```: Controls how often boxes are spawned (in seconds).
+- ```timer```: Keeps track of time between spawns.
+- ```floorBoxX``` & ```floorBoxY```: The exact spawn location for floor boxes.
+- ```floatBoxX```: X position for floating boxes.
+- ```minSpawnHeight``` & ```maxSpawnHeight```: Sets the random height range for spawning floating boxes.
 
-
-#### Step 2)
+#### Step 2) Handling Spawning Timing in ```Update()``` Method
 ```
     void Update()
     {
@@ -307,9 +327,11 @@ public class BoxSpawner : MonoBehaviour
         }
     }
 ```
+- The ```Update()``` method is called once per frame.
+- It increments the ```timer``` until it reaches ```spawnRate```.
+- Once the timer exceeds the spawn rate, it **spawns a box** and resets the timer.
 
-
-#### Step 3)
+#### Step 3) Spawning Logic in ```SpawnBox()``` Method
 ```
     void SpawnBox()
     {
@@ -333,11 +355,22 @@ public class BoxSpawner : MonoBehaviour
     }
 }
 ```
-
+- **Random Selection**:
+  - ```if (Random.value < 0.5f)``` decides whether to spawn a floor box or a float box, giving each a 50% chance.
+- **Floor Box Spawn**:
+  - Spawns at the defined ```floorBoxX``` and ```floorBoxY``` positions.
+- **Float Box Spawn:**
+  - Spawns at ```floatBoxX``` with a random height between ```minSpawnHeight``` and ```maxSpawnHeight```.
+- ```Instantiate()```:
+  - Instantiates the selected box at the calculated position with no rotation (```Quaternion.identity```).
 
 ### BoxDestroyer.cs
+The **BoxDestroyer.cs** script handles:
+- Detecting when obstacles (boxes) leave the game area (usually by crossing a boundary trigger collider).
+- Increasing the player’s score when obstacles are successfully avoided and leave the screen.
+- Cleaning up off-screen obstacles to keep the game running smoothly.
 
-#### Step 1)
+#### Step 1) Declaring Variables
 ```
 using UnityEngine;
 
@@ -345,9 +378,9 @@ public class BoxDestroyer : MonoBehaviour
 {
     private LogicScript logicScript;
 ```
+- ```LogicScript logicScript;``` → Holds a reference to the ```LogicScript``` in order to update the score when obstacles are destroyed.
 
-
-#### Step 2)
+#### Step 2) Finding LogicScript in ```Start()```
 ```
     void Start()
     {
@@ -359,9 +392,10 @@ public class BoxDestroyer : MonoBehaviour
         }
     }
 ```
+- Uses ```GameObject.FindFirstObjectByType<LogicScript>()``` to **find the Logic Manager in the scene**.
+- If not found, an error message appears in the console to alert the developer.
 
-
-#### Step 3)
+#### Step 3) Handling Object Entry in ```OnTriggerEnter2D()```
 ```
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -374,9 +408,17 @@ public class BoxDestroyer : MonoBehaviour
     }
 }
 ```
-
+- ```OnTriggerEnter2D()``` is called when an obstacle enters the trigger zone (usually an invisible boundary at the edge of the screen).
+- If ```logicScript``` **is assigned**, it calls ```addScore()``` to **increase the player’s score**.
+- Logs a message in the console for confirmation.
+- Destroys the obstacle (```other.gameObject```) to clean up and free memory.
 
 ### LogicScript.cs
+The **LogicScript.cs** script handles:
+- Tracking and updating the player's **score**.
+- Managing the **Game Over screen**.
+- Restarting the game when the player chooses to play again.
+This script is crucial for displaying UI elements and managing game flow after collisions or successful obstacle avoidance.
 
 #### Step 1)
 ```
@@ -390,7 +432,9 @@ public class LogicScript : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
 ```
-
+- ```playerScore```: Stores the current player score.
+- ```scoreText```: A reference to the UI text object that displays the score.
+- ```gameOverScreen```: A reference to the Game Over UI panel, which becomes visible when the player loses.
 
 #### Step 2)
 ```
@@ -399,7 +443,7 @@ public class LogicScript : MonoBehaviour
         Debug.Log("✅ LogicScript has started!");
     }
 ```
-
+- Logs a message to confirm that the ```LogicScript``` has started and is attached to an active GameObject.
 
 #### Step 3)
 ```
@@ -411,7 +455,9 @@ public class LogicScript : MonoBehaviour
         Debug.Log("✅ Score Increased: " + playerScore);
     }
 ```
-
+- This method is called to **increase the score by 1** whenever an obstacle leaves the screen without colliding.
+- Updates the **score text** in the UI.
+- The ```[ContextMenu("Increase Score")]``` attribute allows you to manually test increasing the score from the Unity editor by right-clicking on the script component.
 
 #### Step 4)
 ```
@@ -422,6 +468,9 @@ public class LogicScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 ```
+- Resets the game after Game Over.
+- ```Time.timeScale = 1f;``` ensures the game is unpaused (in case it was frozen after Game Over).
+- **Reloads the current scene** to restart the game from the beginning.
 
 
 #### Step 5)
@@ -442,7 +491,9 @@ public class LogicScript : MonoBehaviour
     }
 }
 ```
-
+- Displays the **Game Over screen** by activating the Game Over UI panel.
+- If the ```gameOverScreen``` is not assigned in the inspector, it logs an error.
+- **Pauses the game** by setting ```Time.timeScale = 0f;``` so that all physics and movement stop.
 
 ## Summary
 Once you have completed all the steps, your are finished and have a functional stickman running game!
