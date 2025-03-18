@@ -84,7 +84,7 @@ public class StickmanScript : MonoBehaviour
 ```
 
 ## Visual Studio Code
-There are 5 classes needed for this game to function properly, stickman's functionality, box movements, box spawning, box deletion, and a logic script.
+There are 5 classes needed for this game to function properly, stickman's functions, box movements, box spawning, box deletion, and a logic script.
 
 ### StickManScript.cs
 The **StickmanScript.cs** controls the **player's movement**, specifically jumping and falling, while also handling **collisions** with the ground and obstacles. The script ensures that:
