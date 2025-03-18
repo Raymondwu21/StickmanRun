@@ -86,7 +86,7 @@ Here, you will find everything you need to use in order to create the stickman r
 ![image](https://github.com/user-attachments/assets/fa8f847e-65e9-4d76-a498-7bf4be219e2e)
 
 ### Unity Scripting (C#)
-Scripts are instructions for your game objects to follow, they are attached as a component the same way as you attached **"Sprite Renderer"** and **"Ridgidbody2D"**. When you first create your script for your sprite, there will be two methods loaded in. ```Start()``` is called at the very beginning before the first frame. ```Update()``` is called once per frame.
+Scripts are instructions for your game objects to follow, they are attached as a component the same way as you attached **"Sprite Renderer"** and **"Ridgidbody2D"**. When you first create your script for your sprite through adding the component **new Script** in the **Inspector**, there will be two methods generated. ```Start()``` is called at the very beginning before the first frame. ```Update()``` is called once per frame.
 ```
 using UnityEngine;
 
