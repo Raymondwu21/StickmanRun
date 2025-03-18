@@ -1,13 +1,20 @@
 # How to Script a Stickman Running Game with Unity
 
 ## Introduction
-This project is a **2D Stickman Running Game** built using [Unity](https://unity.com) and [Visual Studio Code](https://code.visualstudio.com/) to program it. Players control a stickman as they jump over obstacles and survive as long as possible. This project is designed for beginners to learn the basics of Unity game development.
-
-## Overview
+This project is a **2D Stickman Running Game** built using [Unity](https://unity.com) and [Visual Studio Code](https://code.visualstudio.com/) to program it. This project is designed for beginners to learn the basics of Unity game development.
 - Developed with **Unity and C#**
 - Features **infinite runner mechanics**
 - Implements **jumping, obstacles, and a scoring system**
 - Includes a **game over system** when hitting obstacles
+
+## Overview
+Stickman Run is a simple yet addictive 2D endless runner game where you control a stickman who must jump over ground-level obstacles and dodge floating boxes.
+
+- Objective: Survive as long as possible and increase your score by avoiding obstacles.
+- Controls: Press Space or Up Arrow to jump, and Down Arrow to fall faster.
+- Dynamic Difficulty: Obstacles gradually move faster over time to challenge the player.
+- Scoring: Every obstacle that leaves the screen without hitting the stickman adds 1 point.
+- Game Over: Colliding with the side of a box ends the game and displays the Game Over screen.
 
 ## Prerequisites
 - Unity (latest version)
