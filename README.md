@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/64507b6c-06df-4690-802d-92d226e1389e)# How to Create a Stickman Running Game with Unity
+# How to Create a Stickman Running Game with Unity
 
 ## Introduction
 This project is a **2D Stickman Running Game** built using [Unity](https://unity.com) and [Visual Studio Code](https://code.visualstudio.com/) to program it. Players control a stickman as they jump over obstacles and survive as long as possible. This project is designed for beginners to learn the basics of Unity game development.
