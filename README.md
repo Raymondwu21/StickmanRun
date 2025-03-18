@@ -92,7 +92,7 @@ The **StickmanScript.cs** controls the **player's movement**, specifically jumpi
 - The **Stickman falls faster** when pressing the **Down Arrow**.
 - The **game ends** when the Stickman **collides with the left side of an obstacle**.
 
-#### Step 1) Declare the Variables
+#### Step 1) Declaring Variables
 ```
 using UnityEngine;
 
