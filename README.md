@@ -423,7 +423,7 @@ The **LogicScript.cs** script handles:
 - Restarting the game when the player chooses to play again.
 This script is crucial for displaying UI elements and managing game flow after collisions or successful obstacle avoidance.
 
-#### Step 1)
+#### Step 1) Declaring Variables
 ```
 using UnityEngine;
 using UnityEngine.UI;
@@ -439,7 +439,7 @@ public class LogicScript : MonoBehaviour
 - ```scoreText```: A reference to the UI text object that displays the score.
 - ```gameOverScreen```: A reference to the Game Over UI panel, which becomes visible when the player loses.
 
-#### Step 2)
+#### Step 2) Initialization in ```Start()``` Method
 ```
     void Start()
     {
@@ -448,7 +448,7 @@ public class LogicScript : MonoBehaviour
 ```
 - Logs a message to confirm that the ```LogicScript``` has started and is attached to an active GameObject.
 
-#### Step 3)
+#### Step 3) Increasing the Player's Score (```addScore()``` Method)
 ```
     [ContextMenu("Increase Score")]
     public void addScore()
@@ -462,7 +462,7 @@ public class LogicScript : MonoBehaviour
 - Updates the **score text** in the UI.
 - The ```[ContextMenu("Increase Score")]``` attribute allows you to manually test increasing the score from the Unity editor by right-clicking on the script component.
 
-#### Step 4)
+#### Step 4) Restarting the Game (```restartGame()``` Method)
 ```
     public void restartGame()
     {
@@ -476,7 +476,7 @@ public class LogicScript : MonoBehaviour
 - **Reloads the current scene** to restart the game from the beginning.
 
 
-#### Step 5)
+#### Step 5) Handling Game Over (```gameOver()``` Method)
 ```
     public void gameOver()
     {
