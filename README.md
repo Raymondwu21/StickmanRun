@@ -31,6 +31,7 @@ Sprites are the **visual representations of game objects**. For this game, we ne
 - **Stickman character**
 - **Ground (floor)**
 - **Box (obstacle)**
+
 **1.** Import Sprites
  - **Download or create your own** sprites.
  - **Import them into Unity**:  
