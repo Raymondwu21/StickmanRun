@@ -8,7 +8,7 @@ This project is a **2D Stickman Running Game** built using [Unity](https://unity
 - Includes a **game over system** when hitting obstacles
 
 ## 📚 Table of Contents
-- [🎮 Game Overview](#-game-overview)
+- [🎮 Game Overview](#-overview)
 - [🛠️ Prerequisites](#️-prerequisites)
 - [🚀 Unity Project Setup](#-unity-project-setup)
 - [🎨 Sprite Setup](#-sprite-setup)
